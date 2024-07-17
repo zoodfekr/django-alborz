@@ -4,4 +4,4 @@ from django.http import HttpResponse
 
 
 def homeview(request):
-    return HttpResponse("Hello, world. You're at the index page.")
+    return render(request,'home.html')
