@@ -365,19 +365,30 @@ background: linear-gradient(90deg, rgba(44,35,186,1) 0%, rgba(37,37,161,1) 35%, 
 
 
 .element {
-
 display: flex;
+flex-direction:column;
 justify-content: center;
 align-items: center;
 padding:5px;
 border-radius:10px;
 width:40%;
-  box-sizing: border-box;
+box-sizing: border-box;
 height:40%;
 background: rgba(0,0,0,0.5)
 }
 
 .text {
 color: red;
+font-size:40px
+}
+
+
+.text2 {
+color: yellow;
+font-size:40px
+}
+
+.text3 {
+color: green;
 font-size:40px
 }

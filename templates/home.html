@@ -1,16 +1,30 @@
+
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <title>Document</title>
-    <style>
-        {% include './style.css' %}
-    </style>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>Document</title>
+<style>
+{% include './style.css' %}
+</style>
 </head>
 <body>
 <div class="container">
-    <div class="element">
-        <p class="text">home page</p>
-    </div>
+<div class="element">
+<p class="text">home page</p>
+<p class="text">{{name}}</p>
+
+{% if value < 10 %}
+<p class="text">value is {{value}} - little</p>
+
+{% elif value >= 10 and value < 18 %}
+<p class="text2">value is {{value}} - middle</p>
+
+{% else %}
+<p class="text3">value is {{value}} - big</p>
+
+{% endif %}
+
+</div>
 </div>
 </body>
 </html>
