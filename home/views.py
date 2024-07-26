@@ -19,7 +19,7 @@ firstof_test = {
 def homeview(request):
     return render(
         request,
-        'home.html',
+        'home/home.html',
         context={
             "data":data ,
             "fruits":fruits,
