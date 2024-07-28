@@ -1,46 +1,17 @@
-<html>
-
-<head>
-  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-  <title>Document</title>
-  <style>
-    {% include '../style.css' %}
-  </style>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-
-</head>
-
-<body>
-  <div class="container w-full">
-    <div class="element ">
-
-      <p class="text ">home page</p>
-
-      <p class="text">{{data.name}}</p>
-
-      {% if value < 10 %} <p class="text">value is {{data.value}} - little</p>
-      {% elif value >= 10 and value < 18 %} <p class="text2">value is {{data.value}} - middle</p>
-      {% else %}
-      <p class="text3">value is {{data.value}} - big</p>
-      {% endif %}
-
-      <ul>
-        {% for x in fruits %}
-          <li style="color:{% cycle 'red' 'green' 'blue' 'pink' %}" >
-           {{ x }}
-          </li>
-        {% empty %}
-           <li>Sorry, no athletes in this list.</li>
-        {% endfor %}
-      </ul>
+{% extends './layout.html' %}
 
 
-      {% firstof firstof_test.val1 firstof_test.val2 firstof_test.val3 "<p> مقداری موجود نیست </p>" %}
+{% block title %}
+home
+{% endblock %}
 
-
+{% block homElement %}
+  {% for i in data %}
+    <div class="border my-2 rounded-lg p-11 bg-rose-50" >
+      <h1 class="text-lg text-gray bg-stone-200 rounded p-3">
+        {{ i.topic }}
+      </h1>
+      <p class="text-justify mt-3" dir="rtl"> {{i.text}} </P>
     </div>
-  </div>
-</body>
-
-</html>
+  {% endfor %}
+{% endblock %}
